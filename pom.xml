@@ -15,6 +15,7 @@
 	<description>Spring Boot Todo Demo application for showcasing, blogposts and learning purposes.</description>
 	<properties>
 		<java.version>11</java.version>
+		<commons-io.version>2.11.0</commons-io.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -38,8 +39,20 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.141.59</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${commons-io.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>

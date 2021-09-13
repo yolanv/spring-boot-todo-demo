@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Index Page</title>
+    <title>JWorks Todo Demo App</title>
     <style>
         #todocontainer{
             margin-top: 50px;
@@ -68,7 +68,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">TODO</h5>
+                    <h5 class="modal-title" id="modalTitle">TODO</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -76,7 +76,6 @@
                 <div class="modal-body">
                     <form th:action="@{/todo/create}" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
-                            <label for="todoDescription">Todo</label>
                             <input type="text" id="todoDescription" class="form-control" name="todoDescription" aria-describedby="emailHelp" placeholder="Enter Todo">
                         </div>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
