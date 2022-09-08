@@ -1,5 +1,5 @@
 # We need a JDK 11 image, so specify that we want to build from a JDK 11 image
-FROM adoptopenjdk/openjdk11:alpine
+FROM amazoncorretto:11
 # Specify a default work directory where the app and its files will be stored
 WORKDIR /opt
 # Copy your packaged JAR file into your image
