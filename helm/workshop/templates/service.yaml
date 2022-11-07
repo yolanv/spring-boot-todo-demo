@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "workshop.fullname" . }}
+  labels:
+    {{- include "workshop.labels" . | nindent 4 }}
+spec:
+  {{- with .Values.service }}
+  ports:
+      {{- range .ports }}
+      - port: {{.port}}
+        targetPort: {{.targetPort}}
+        protocol: {{.protocol}}
+        name: {{.name}}
+      {{- end }}
+      {{- if .debugPort }}
+      - port: {{.debugPort}}
+        targetPort: {{.debugPort}}
+        protocol: TCP
+        name: debug
+      {{- end }}
+  type: {{ .type }}
+  {{- end }}
+
+  selector:
+    {{- include "workshop.selectorLabels" . | nindent 4 }}
