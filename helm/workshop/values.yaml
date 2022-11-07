@@ -1,0 +1,28 @@
+# Default values for workshop.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+nameOverride: "workshop"
+fullnameOverride: "workshop"
+
+podAnnotations: {}
+
+service:
+  type: NodePort
+  debugPort: 5005
+  ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+      name: http
+    - port: 443
+      targetPort: 443
+      protocol: TCP
+      name: https
+
+container:
+  name: spring-boot-todo-demo
+  image: yolanv/sb-todo-demo
+  port: 8080

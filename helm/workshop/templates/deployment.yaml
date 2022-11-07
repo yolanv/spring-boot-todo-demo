@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "workshop.fullname" . }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "workshop.selectorLabels" . | nindent 6 }}
+  replicas: {{ .Values.replicaCount }}
+  template:
+    metadata:
+      labels:
+        {{- include "workshop.labels" . | nindent 8 }}
+    spec:
+      {{- with .Values.container }}
+      containers:
+        - name: {{ .name }}
+          image: {{ .image }}
+          ports:
+            - containerPort: {{ .port }}
+      {{- end }}
