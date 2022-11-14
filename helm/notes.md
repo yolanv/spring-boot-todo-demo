@@ -1,11 +1,12 @@
 ## Workshop HELM
-
+0. Start minikube
 1. Create helm package
     - ``Helm create <chart name>``
 2. Go into helm package
     - ``cd <chart name>``
 3. Delete everything inside templates (except _helpers.tpl)
    - Clear values.yaml
+   - Delete Test folder
 4. Copy .yaml from kubernetes folder into templates
 5. Install helm chart on minikube
    - ``helm install -f ./values.yaml <chart name> .``
