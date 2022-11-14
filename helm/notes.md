@@ -8,7 +8,7 @@
    - Clear values.yaml
 4. Copy .yaml from kubernetes folder into templates
 5. Install helm chart on minikube
-   - ``helm install -f ./values.yaml <chart name>``
+   - ``helm install -f ./values.yaml <chart name> .``
    - ``kubectl get pod``
    - ``kubectl port-forward <pod name> 8080:8080``
 6. Fill in replicas with a helm value
